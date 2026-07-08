@@ -1,0 +1,38 @@
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+mongoose.connect(
+  "mongodb://127.0.0.1:27017/companydb"
+)
+.then(() => {
+  console.log("MongoDB Connected");
+})
+.catch((err) => {
+  console.log(err);
+});
+
+app.get("/", (req, res) => {
+  res.send("Server Running");
+});
+
+app.use(
+  "/departments",
+  require("./routes/departmentRoutes")
+);
+
+app.use(
+  "/employees",
+  require("./routes/employeeRoutes")
+);
+
+app.listen(5000, () => {
+  console.log(
+    "Server is running on port 5000"
+  );
+});
