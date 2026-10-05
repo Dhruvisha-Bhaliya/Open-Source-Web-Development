@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+</head>
+<body>
+    <h2>Welcome, <%= employee.name %></h2>
+
+    <h5>Employee Department: <%=employee.department %></h5>
+
+        <h2>Vehicle Dashboard</h2>
+
+    <table border="1">
+
+        <tr>
+            <th>Vehicle Name</th>
+            <th>Vehicle Type</th>
+            <th>Price</th>
+        </tr>
+
+        <% vehicles.forEach(vehicle => { %>
+
+            <tr>
+                <td><%= vehicle.vehicleName %></td>
+                <td><%= vehicle.vehicleType %></td>
+                <td><%= vehicle.price %></td>
+            </tr>
+
+        <% }); %>
+
+    </table>
+    
+    <a href="/logout">Logout</a>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+<h2>Owner Login</h2>
+
+<% if (error) { %>
+    <p><%= error %></p>
+<% } %>
+
+<% if (success) { %>
+    <p><%= success %></p>
+<% } %>
+
+<form method="POST" action="/login">
+
+    <label>Email:</label>
+    <input type="email" name="email">
+
+    <br><br>
+
+    <label>Password:</label>
+    <input type="password" name="password">
+
+    <br><br>
+
+    <button type="submit">Login</button>
+
+</form>
+
+<br>
+
+<a href="/register">Register</a>
+
+</body>
+</html>

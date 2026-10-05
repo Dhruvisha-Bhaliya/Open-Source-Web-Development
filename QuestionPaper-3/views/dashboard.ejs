@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h2>Welcome, <%= owner.name %></h2>
+
+<p>Email: <%= owner.email %></p>
+
+<h3>Products</h3>
+
+<table border="1">
+
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+
+    <% products.forEach(product => { %>
+
+    <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.quantity %></td>
+    </tr>
+
+    <% }) %>
+
+</table>
+
+<br>
+
+<a href="/logout">Logout</a>
+
+</body>
+</html>

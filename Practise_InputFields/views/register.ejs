@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+
+<h2>Hotel Booking Registration</h2>
+
+<form action="/register" method="POST">
+
+    Guest Name:
+
+    <input type="text" name="guestName">
+
+    <br><br>
+
+
+    Email:
+
+    <input type="email" name="email">
+
+    <br><br>
+
+
+    Password:
+
+    <input type="password" name="password">
+
+    <br><br>
+
+
+    Room Type:
+
+    <select name="roomType">
+
+        <option value="Single">Single</option>
+
+        <option value="Double">Double</option>
+
+        <option value="Deluxe">Deluxe</option>
+
+    </select>
+
+    <br><br>
+
+
+    Gender:
+
+    <input type="radio"
+           name="gender"
+           value="Male">
+
+    Male
+
+    <input type="radio"
+           name="gender"
+           value="Female">
+
+    Female
+
+    <br><br>
+
+
+    Facilities:
+
+    <input type="checkbox"
+           name="facilities"
+           value="WiFi">
+
+    WiFi
+
+
+    <input type="checkbox"
+           name="facilities"
+           value="Breakfast">
+
+    Breakfast
+
+
+    <input type="checkbox"
+           name="facilities"
+           value="Parking">
+
+    Parking
+
+    <br><br>
+
+
+    Check In:
+
+    <input type="date"
+           name="checkIn">
+
+    <br><br>
+
+
+    Check Out:
+
+    <input type="date"
+           name="checkOut">
+
+    <br><br>
+
+
+    <button type="submit">
+        Register
+    </button>
+
+</form>
+
+<br>
+
+<a href="/login">
+    Already have an account? Login
+</a>
+
+</body>
+</html>

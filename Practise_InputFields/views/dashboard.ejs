@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hotel Booking Dashboard</title>
+</head>
+
+<body>
+
+    <h2>Hotel Booking Dashboard</h2>
+
+    <!-- Filter Form -->
+
+    <form action="/dashboard" method="GET">
+
+        <label>Room Type:</label>
+
+        <select name="roomType">
+
+            <option value="">All Rooms</option>
+
+            <option value="Single"
+                <%= roomType === "Single" ? "selected" : "" %>>
+                Single
+            </option>
+
+            <option value="Double"
+                <%= roomType === "Double" ? "selected" : "" %>>
+                Double
+            </option>
+
+            <option value="Deluxe"
+                <%= roomType === "Deluxe" ? "selected" : "" %>>
+                Deluxe
+            </option>
+
+        </select>
+
+
+        <br><br>
+
+
+        <label>Facilities:</label>
+
+        <br>
+
+        <input type="checkbox"
+               name="facilities"
+               value="WiFi">
+        WiFi
+
+        <br>
+
+        <input type="checkbox"
+               name="facilities"
+               value="Breakfast">
+        Breakfast
+
+        <br>
+
+        <input type="checkbox"
+               name="facilities"
+               value="Parking">
+        Parking
+
+
+        <br><br>
+
+
+        <button type="submit">
+            Filter
+        </button>
+
+        <a href="/dashboard">
+            Clear Filter
+        </a>
+
+    </form>
+
+
+    <hr>
+
+
+    <h3>Booking Data</h3>
+
+
+    <% if (bookings.length === 0) { %>
+
+        <p>No booking found.</p>
+
+    <% } else { %>
+
+
+        <% bookings.forEach(function(booking) { %>
+
+            <div>
+
+                <p>
+                    <b>Guest Name:</b>
+                    <%= booking.guestName %>
+                </p>
+
+                <p>
+                    <b>Email:</b>
+                    <%= booking.email %>
+                </p>
+
+                <p>
+                    <b>Room Type:</b>
+                    <%= booking.roomType %>
+                </p>
+
+                <p>
+                    <b>Gender:</b>
+                    <%= booking.gender %>
+                </p>
+
+                <p>
+                    <b>Facilities:</b>
+                    <%= booking.facilities.join(", ") %>
+                </p>
+
+                <p>
+                    <b>Check In:</b>
+                    <%= new Date(booking.checkIn).toDateString() %>
+                </p>
+
+                <p>
+                    <b>Check Out:</b>
+                    <%= new Date(booking.checkOut).toDateString() %>
+                </p>
+
+                <hr>
+
+            </div>
+
+        <% }); %>
+
+
+    <% } %>
+
+
+    <br>
+
+    <a href="/logout">
+        Logout
+    </a>
+
+</body>
+
+</html>
