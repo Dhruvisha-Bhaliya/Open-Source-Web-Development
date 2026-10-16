@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Room</title>
+</head>
+
+<body>
+    <h2>Room Master Form</h2>
+    <form action="/rooms/add" method="POST">
+        <input type="text" name="roomNo" placeholder="Room No." required><br><br>
+
+        <!-- Dynamic Dropdown from PHP API -->
+        <select name="roomType" required>
+            <option value="">-- Select Room Type --</option>
+            <% roomTypes.forEach(t=> { %>
+                <option value="<%= t.room_type %>">
+                    <%= t.room_type %>
+                </option>
+                <% }) %>
+        </select><br><br>
+
+        <input type="number" name="roomPrice" placeholder="Room Price" required><br><br>
+        <input type="number" name="floorNo" placeholder="Floor No." required><br><br>
+
+        <select name="roomStatus" required>
+            <option value="Available">Available</option>
+            <option value="Booked">Booked</option>
+            <option value="Maintenance">Maintenance</option>
+        </select><br><br>
+
+        <button type="submit">Save Room</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Room List</title>
+</head>
+
+<body>
+    <h2>Room Master Details</h2>
+    <a href="/rooms/add">Add New Room</a><br><br>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Room No</th>
+            <th>Room Type</th>
+            <th>Price</th>
+            <th>Floor No</th>
+            <th>Status</th>
+        </tr>
+        <% rooms.forEach(r=> { %>
+            <tr>
+                <td>
+                    <%= r.roomNo %>
+                </td>
+                <td>
+                    <%= r.roomType %>
+                </td>
+                <td>
+                    <%= r.roomPrice %>
+                </td>
+                <td>
+                    <%= r.floorNo %>
+                </td>
+                <td>
+                    <%= r.roomStatus %>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+</body>
+
+</html>
